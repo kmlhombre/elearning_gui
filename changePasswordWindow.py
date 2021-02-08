@@ -1,5 +1,7 @@
 import wx
 
+from successWindow import successFrame
+
 
 class changePasswordFrame(wx.Frame):
 
@@ -35,4 +37,5 @@ class changePasswordFrame(wx.Frame):
         #TODO update password in database
         #wpisac nowe haslo do bazy:
         newPassword = self.txt.GetValue()
+        successFrame('Password has been changed')
         self.Hide()

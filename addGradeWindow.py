@@ -51,13 +51,13 @@ class addGradeFrame(wx.Frame):
         # TODO add grades to the database. Call proper function.
         # TODO get response message?
         isGradeAdded = False
-        # close modal on success
+        # Mock - to replacec
         b = event.GetEventObject()
         print(b.GetLabel(), "Add grade success")
         self.Hide()
 
         if isGradeAdded:
-            successFrame()
+            successFrame('Successfully added a grade!')
         else:
             errorFrame('Some error has occured')
 

@@ -4,14 +4,16 @@ import wx
 class errorFrame(wx.Frame):
 
     def __init__(self, message):
-        super().__init__(parent=None, title="elearning")
+        super().__init__(parent=None, title="Error")
         self.message = message
         self.SetSize(200, 100)
         panel = wx.Panel(self)
+        panel.SetBackgroundColour('orange')
         my_sizer = wx.BoxSizer(wx.VERTICAL)
 
         #elementy zawarte w oknie
         txt = wx.StaticText(panel, -1, message, (100, 50), (160, -1), wx.ALIGN_CENTER)
+        txt.SetForegroundColour('white')
         my_btn = wx.Button(panel, label='Try Again')
 
         #akcja dla przycisku

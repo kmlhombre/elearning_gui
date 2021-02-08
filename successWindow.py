@@ -3,14 +3,16 @@ import wx
 
 class successFrame(wx.Frame):
 
-    def __init__(self):
+    def __init__(self, message):
         super().__init__(parent=None, title="Success")
+        self.message = message
         self.SetSize(200, 100)
         panel = wx.Panel(self)
         my_sizer = wx.BoxSizer(wx.VERTICAL)
+        panel.SetBackgroundColour('green')
 
         #elementy zawarte w oknie
-        txt = wx.StaticText(panel, -1, "Successfully added a grade!", (100, 50), (160, -1), wx.ALIGN_CENTER)
+        txt = wx.StaticText(panel, -1, message, (100, 50), (160, -1), wx.ALIGN_CENTER)
         my_btn = wx.Button(panel, label='AWESOME')
 
         #akcja dla przycisku
