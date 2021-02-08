@@ -2,7 +2,6 @@ import wx
 
 from changePasswordWindow import changePasswordFrame
 
-
 class studentPanel(wx.Panel):
     def __init__(self, parent):
         super().__init__(parent)
@@ -45,7 +44,7 @@ class studentPanel(wx.Panel):
 
 class studentFrame(wx.Frame):
     def __init__(self):
-        super().__init__(parent=None, title="elearning")
+        super().__init__(parent=None, title="elearning Student")
         self.SetSize(1280, 720)
         self.panel = studentPanel(self)
         self.Show()

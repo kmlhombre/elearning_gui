@@ -5,14 +5,21 @@ class changePasswordFrame(wx.Frame):
 
     def __init__(self):
         super().__init__(parent=None, title="elearning")
-        self.SetSize(300, 300)
+        self.SetSize(400, 300)
+        self.SetBackgroundColour('pink')
         panel = wx.Panel(self)
         my_sizer = wx.BoxSizer(wx.VERTICAL)
+
+        sizer = wx.BoxSizer()
+        sizer.AddStretchSpacer(1)
+        sizer.Add(panel, 0, wx.ALIGN_CENTER)
+        sizer.AddStretchSpacer(1)
+
+        self.SetSizer(sizer)
 
         #elementy zawarte w oknie
         self.txt = wx.TextCtrl(panel)
         my_btn = wx.Button(panel, label='Change Password')
-
         #akcje obiektow
         self.txt.AppendText("New Password")
         my_btn.Bind(wx.EVT_BUTTON, self.on_press)
@@ -25,7 +32,7 @@ class changePasswordFrame(wx.Frame):
         self.Show()
 
     def on_press(self, event):
-        #TODO
+        #TODO update password in database
         #wpisac nowe haslo do bazy:
         newPassword = self.txt.GetValue()
         self.Hide()

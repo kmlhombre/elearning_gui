@@ -1,18 +1,17 @@
 import wx
 
 
-class errorFrame(wx.Frame):
+class successFrame(wx.Frame):
 
-    def __init__(self, message):
-        super().__init__(parent=None, title="elearning")
-        self.message = message
+    def __init__(self):
+        super().__init__(parent=None, title="Success")
         self.SetSize(200, 100)
         panel = wx.Panel(self)
         my_sizer = wx.BoxSizer(wx.VERTICAL)
 
         #elementy zawarte w oknie
-        txt = wx.StaticText(panel, -1, message, (100, 50), (160, -1), wx.ALIGN_CENTER)
-        my_btn = wx.Button(panel, label='Try Again')
+        txt = wx.StaticText(panel, -1, "Successfully added a grade!", (100, 50), (160, -1), wx.ALIGN_CENTER)
+        my_btn = wx.Button(panel, label='AWESOME')
 
         #akcja dla przycisku
         my_btn.Bind(wx.EVT_BUTTON, self.on_press)
