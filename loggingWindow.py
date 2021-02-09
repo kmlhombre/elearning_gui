@@ -15,6 +15,7 @@ class loggingFrame(wx.Frame):
         panel = wx.Panel(self)
         my_sizer = wx.BoxSizer(wx.VERTICAL)
 
+        #TEST GITHUBA LOLOLOL
         sizer = wx.BoxSizer()
         sizer.AddStretchSpacer(1)
         sizer.Add(panel, 0, wx.ALIGN_CENTER)
@@ -50,7 +51,7 @@ class loggingFrame(wx.Frame):
         # tutaj potrzebna funkcja logujaca
 
         # na potrzebny testowania
-        logged_status = "Teacher"
+        logged_status = "Parent"
         is_logged = True
 
         if logged_status == "Student" and is_logged:
