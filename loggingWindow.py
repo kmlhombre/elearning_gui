@@ -44,24 +44,25 @@ class loggingFrame(wx.Frame):
 
     def on_press(self, event):
 
-        # TODO
+        # TODO zrobic funkcje ktora loguje uzytkownika
         login = self.text_ctrl1.GetValue()
         password = self.text_ctrl2.GetValue()
 
         # tutaj potrzebna funkcja logujaca
 
         # na potrzebny testowania
-        logged_status = "Parent"
+        logged_user_id = 1
+        logged_status = "Student"
         is_logged = True
 
         if logged_status == "Student" and is_logged:
-            studentFrame()
-            self.Hide()
+            studentFrame(logged_user_id)
+            self.Close()
         elif logged_status == "Parent" and is_logged:
-            parentFrame()
-            self.Hide()
+            parentFrame(logged_user_id)
+            self.Close()
         elif logged_status == "Teacher" and is_logged:
-            teacherFrame()
-            self.Hide()
+            teacherFrame(logged_user_id)
+            self.Close()
         else:
             errorFrame('Wrong login data')

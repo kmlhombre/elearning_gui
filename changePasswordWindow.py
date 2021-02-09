@@ -5,12 +5,14 @@ from successWindow import successFrame
 
 class changePasswordFrame(wx.Frame):
 
-    def __init__(self):
+    def __init__(self, logged_user):
         super().__init__(parent=None, title="elearning")
         self.SetSize(400, 300)
         self.SetBackgroundColour('pink')
         panel = wx.Panel(self)
         my_sizer = wx.BoxSizer(wx.VERTICAL)
+
+        self.logged_user_id = logged_user
 
         sizer = wx.BoxSizer()
         sizer.AddStretchSpacer(1)
@@ -34,8 +36,8 @@ class changePasswordFrame(wx.Frame):
         self.Show()
 
     def on_press(self, event):
-        #TODO update password in database
-        #wpisac nowe haslo do bazy:
+        #TODO wpisac nowe haslo do bazy:
         newPassword = self.txt.GetValue()
+
         successFrame('Password has been changed')
         self.Hide()

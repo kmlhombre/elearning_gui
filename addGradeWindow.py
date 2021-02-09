@@ -6,7 +6,7 @@ from successWindow import successFrame
 
 class addGradeFrame(wx.Frame):
 
-    def __init__(self):
+    def __init__(self, students):
         super().__init__(parent=None, title="Add Grade")
         self.SetSize(400, 300)
         self.SetBackgroundColour('pink')
@@ -20,21 +20,18 @@ class addGradeFrame(wx.Frame):
 
         self.SetSizer(sizer)
 
-        self.text_ctrl1 = wx.TextCtrl(panel)
-        self.text_ctrl2 = wx.TextCtrl(panel)
+        self.choice = wx.Choice(panel, choices=students)
         self.text_ctrl3 = wx.TextCtrl(panel)
 
         my_btn = wx.Button(panel, label='Confirm', pos=(20, 20), size=(300, 50))
 
         # akcje obiektow
-        self.text_ctrl1.AppendText("Student")
-        self.text_ctrl2.AppendText("Subject")
+        self.choice.SetSelection(0)
         self.text_ctrl3.AppendText("Grade")
         my_btn.Bind(wx.EVT_BUTTON, self.on_press)
 
         # rozmieszczenie obiektow w oknie
-        my_sizer.Add(self.text_ctrl1, 0, wx.ALL | wx.EXPAND, 4)
-        my_sizer.Add(self.text_ctrl2, 0, wx.ALL | wx.EXPAND, 4)
+        my_sizer.Add(self.choice, 0, wx.ALL | wx.EXPAND, 4)
         my_sizer.Add(self.text_ctrl3, 0, wx.ALL | wx.EXPAND, 4)
         my_sizer.Add(my_btn, 0, wx.ALL | wx.CENTER, 5)
 
@@ -44,9 +41,7 @@ class addGradeFrame(wx.Frame):
     def on_press(self, event):
 
         # TODO
-        student_name = self.text_ctrl1.GetValue()
-        subject = self.text_ctrl2.GetValue()
-        grade =  self.text_ctrl3.GetValue()
+        grade = self.text_ctrl3.GetValue()
 
         # TODO add grades to the database. Call proper function.
         # TODO get response message?
